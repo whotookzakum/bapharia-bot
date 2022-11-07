@@ -12,7 +12,7 @@ for (const file of commandFiles) {
 	commands.push(command.data.toJSON());
 }
 
-// Construct and prepare an instance of the REST module
+// Construct and prepare an instance of the REST module 
 const rest = new REST({ version: '10' }).setToken(token);
 
 // and deploy your commands!
