@@ -1,4 +1,5 @@
-const { loadCommands, ActivityType } = require("../../Handlers/commandHandler")
+const { ActivityType } = require("discord.js");
+const { loadCommands } = require("../../Handlers/commandHandler")
 
 module.exports = {
     name: "ready",
@@ -8,9 +9,9 @@ module.exports = {
 
         loadCommands(client)
 
-        // client.user.setPresence({
-        //     activities: [{ name: `over Regnus`, type: ActivityType.Watching }],
-        //     status: 'online',
-        // })
+        client.user.setPresence({
+            activities: [{ name: `over Regnus`, type: ActivityType.Watching }],
+            status: 'online',
+        })
     }
 }
