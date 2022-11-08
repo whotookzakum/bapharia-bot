@@ -1,4 +1,4 @@
-const { loadCommands } = require("../../Handlers/commandHandler")
+const { loadCommands, ActivityType } = require("../../Handlers/commandHandler")
 
 module.exports = {
     name: "ready",
@@ -7,5 +7,10 @@ module.exports = {
         console.log("Client is ready!")
 
         loadCommands(client)
+
+        // client.user.setPresence({
+        //     activities: [{ name: `over Regnus`, type: ActivityType.Watching }],
+        //     status: 'online',
+        // })
     }
 }
