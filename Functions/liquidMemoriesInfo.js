@@ -79,7 +79,7 @@ function getLiquidMemoriesInfo(color) {
         case "purple":
             options = {
                 title: `Purple Liquid Memories`,
-                description: `Increases enemy drop rate.`,
+                description: `Increases drop rate of items from enemies.`,
                 color: 0x79389e,
                 duration: `??? uses`,
                 unlocks: [
