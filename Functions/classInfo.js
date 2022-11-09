@@ -4,10 +4,35 @@ const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, SelectMenuBuilder } = req
 function getClassInfo(className) {
     let options
 
+    const selector = new ActionRowBuilder()
+        .addComponents(
+            new SelectMenuBuilder()
+                .setCustomId(`class_selector`)
+                .setPlaceholder(`Select a class`)
+                .addOptions(
+                    {
+                        label: `Aegis Fighter`,
+                        value: `aegisfighter`
+                    },
+                    {
+                        label: `Blast Archer`,
+                        value: `blastarcher`
+                    },
+                    {
+                        label: `Spell Caster`,
+                        value: `spellcaster`
+                    },
+                    {
+                        label: `Twin Striker`,
+                        value: `twinstriker`
+                    }
+                )
+        )
+
     switch (className) {
         case "aegisfighter":
             options = {
-                className: `Aegis Fighter`,
+                title: `Aegis Fighter`,
                 description: `Aegis Fighters maintain the front line by fighting at close range, alternating between offensive and defensive shield skills to protect themselves and their allies.`,
                 color: 0xe7d86a,
                 uniqueMechanic: {
@@ -23,7 +48,7 @@ function getClassInfo(className) {
             break;
         case "blastarcher":
             options = {
-                className: `Blast Archer`,
+                title: `Blast Archer`,
                 description: `Blast Archers attack from a range with their bow and are adept at supporting the party. They adapt their fighting style based on the situation through techniques such as weak point targeting and area-of-effect attacks.`,
                 color: 0x3dcdb3,
                 uniqueMechanic: {
@@ -39,7 +64,7 @@ function getClassInfo(className) {
             break;
         case "spellcaster":
             options = {
-                className: `Spell Caster`,
+                title: `Spell Caster`,
                 description: `Spell Casters can learn elemental attacks that manipulate fire, ice and lightning. Their high damage and elemental effects are even more influential when fighting with a party.`,
                 color: 0x5dbceb,
                 uniqueMechanic: {
@@ -55,7 +80,7 @@ function getClassInfo(className) {
             break;
         case "twinstriker":
             options = {
-                className: `Twin Striker`,
+                title: `Twin Striker`,
                 description: `Twin Strikers use their dual axes to unleash a flurry of close-range attacks. By repeatedly attacking, their damage increases further beyond its limits.`,
                 color: 0xd56d2c,
                 uniqueMechanic: {
@@ -75,35 +100,11 @@ function getClassInfo(className) {
                 .setDescription(`There are currently 5 classes, each with a unique mechanic. Each class must be leveled up separately. You can switch classes at a Class Master NPC.\n\n**Select a class below to learn more**`)
                 .setColor(0x446cab)
 
-            const selector = new ActionRowBuilder()
-                .addComponents(
-                    new SelectMenuBuilder()
-                        .setCustomId(`class_selector`)
-                        .setPlaceholder(`Select a class`)
-                        .addOptions(
-                            {
-                                label: `Aegis Fighter`,
-                                value: `aegisfighter`
-                            },
-                            {
-                                label: `Blast Archer`,
-                                value: `blastarcher`
-                            },
-                            {
-                                label: `Spell Caster`,
-                                value: `spellcaster`
-                            },
-                            {
-                                label: `Twin Striker`,
-                                value: `twinstriker`
-                            }
-                        )
-                )
             return { embeds: [embed], components: [selector], ephemeral: true }
     }
 
     const embed = new EmbedBuilder()
-        .setTitle(options.className)
+        .setTitle(options.title)
         .setDescription(options.description)
         .setColor(options.color)
         .addFields(
@@ -135,7 +136,7 @@ function getClassInfo(className) {
                 .setStyle('Link'),
         )
 
-    return { embeds: [embed], components: [buttons], ephemeral: true }
+    return { embeds: [embed], components: [buttons, selector], ephemeral: true }
 }
 
 module.exports = { getClassInfo }
