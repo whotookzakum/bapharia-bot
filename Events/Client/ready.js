@@ -1,4 +1,4 @@
-const { ActivityType } = require("discord.js");
+const { setRandomPresence } = require("../../Functions/updatePresence");
 const { loadCommands } = require("../../Handlers/commandHandler")
 
 module.exports = {
@@ -6,12 +6,7 @@ module.exports = {
     once: true,
     execute(client) {
         console.log("Client is ready!")
-
         loadCommands(client)
-
-        client.user.setPresence({
-            activities: [{ name: `over Regnus`, type: ActivityType.Watching }],
-            status: 'online',
-        })
+        setRandomPresence(client, 7200)
     }
 }
