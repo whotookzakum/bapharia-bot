@@ -114,7 +114,7 @@ function getClassInfo(className) {
         )
         .setImage(options.imageUrl)
         .setThumbnail(options.thumbnailUrl)
-        .setFooter({ text: 'Bapharia.com' })
+        .setFooter({ text: 'Bapharia.com', iconURL: `https://cdn.discordapp.com/attachments/1039444525841653780/1040992188844220498/3.png` })
 
 
     const buttons = new ActionRowBuilder()

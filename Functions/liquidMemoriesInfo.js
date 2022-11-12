@@ -131,7 +131,7 @@ function getLiquidMemoriesInfo(color) {
             { name: `Unlock ${color} liquid memory #2`, value: options.unlocks[1] },
         )
         .setThumbnail(options.thumbnailUrl)
-        .setFooter({ text: 'Bapharia.com' })
+        .setFooter({ text: 'Bapharia.com', iconURL: `https://cdn.discordapp.com/attachments/1039444525841653780/1040992188844220498/3.png` })
 
     return { embeds: [embed], components: [selector], ephemeral: true }
 }
