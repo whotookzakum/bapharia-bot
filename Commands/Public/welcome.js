@@ -12,10 +12,14 @@ module.exports = {
                 `We are a global community for the online game BLUE PROTOCOL, with intentions to become the official server by partnering with Bandai Namco.`
             )
             .addFields(
-                { name: `BLUE PROTOCOL`, value: 
-                '🌐 [Homepage](https://blue-protocol.com/)\n🐦 [Twitter](https://twitter.com/blueprotocol_JP)\n📘 [Terms of Service](https://tinyurl.com/ToS-BP)'},
-                { name: `Community`, value: 
-                '📝 [Reddit](https://www.reddit.com/r/blueprotocol)\n📕 [Discord Terms of Service](https://discord.com/terms)\n📗 [Discord Community Guidelines](https://discord.com/guidelines)'}
+                {
+                    name: `BLUE PROTOCOL`, value:
+                        '🌐 [Homepage](https://blue-protocol.com/)\n🐦 [Twitter](https://twitter.com/blueprotocol_JP)\n📘 [Terms of Service](https://tinyurl.com/ToS-BP)'
+                },
+                {
+                    name: `Community`, value:
+                        '📝 [Reddit](https://www.reddit.com/r/blueprotocol)\n📕 [Discord Terms of Service](https://discord.com/terms)\n📗 [Discord Community Guidelines](https://discord.com/guidelines)'
+                }
             )
             .setColor(0x0099ff)
             .setImage(`https://cdn.discordapp.com/attachments/833861623843258438/833885347007037500/unknown.png`)
@@ -29,36 +33,13 @@ module.exports = {
             .setColor(0xe9365d)
             .setFooter({ text: 'Attempts to circumvent the rules, blocked words, or bans will be met with disciplinary action.' })
 
-        const roles = new EmbedBuilder()
-            .setAuthor({ name: `Role Selection` })
-            .setTitle(`Select your desired roles!`)
+        const commands = new EmbedBuilder()
+            .setTitle(`Roles & Commands`)
+            .setDescription(
+                `Use **/role** to assign yourself roles, or **/help** to view commands.`
+            )
             .setColor(0x53d35e)
 
-        const roleSelector = new ActionRowBuilder()
-            .addComponents(
-                new SelectMenuBuilder()
-                    .setCustomId(`class_selector`)
-                    .setPlaceholder(`Select a role`)
-                    .addOptions(
-                        {
-                            label: `Aegis Fighter`,
-                            value: `aegisfighter`
-                        },
-                        {
-                            label: `Blast Archer`,
-                            value: `blastarcher`
-                        },
-                        {
-                            label: `Spell Caster`,
-                            value: `spellcaster`
-                        },
-                        {
-                            label: `Twin Striker`,
-                            value: `twinstriker`
-                        }
-                    )
-            )
-
-        return interaction.reply({ embeds: [welcome, rules, roles], components: [roleSelector],  ephemeral: false })
+        return interaction.reply({ embeds: [welcome, rules, commands], ephemeral: false })
     },
 };
