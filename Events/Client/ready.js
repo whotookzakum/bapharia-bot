@@ -7,6 +7,6 @@ module.exports = {
     execute(client) {
         console.log("Client is ready!")
         loadCommands(client)
-        setRandomPresence(client, 7200)
+        setRandomPresence(client, 7200) // 2 hours
     }
 }
