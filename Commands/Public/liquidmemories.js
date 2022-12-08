@@ -8,7 +8,7 @@ module.exports = {
         .addStringOption(option =>
             option
                 .setName('color')
-                .setDescription('Information about a specific class.')
+                .setDescription('Information about a specific liquid memory.')
                 .addChoices(
                     { name: 'Yellow', value: 'yellow' },
                     { name: 'Blue', value: 'blue' },
