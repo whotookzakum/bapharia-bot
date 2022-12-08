@@ -6,6 +6,7 @@ module.exports = {
     name: "interactionCreate",
     execute(interaction) {
         const id = interaction.customId
+        
         if (!id) {
             return
         }

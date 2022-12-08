@@ -12,19 +12,23 @@ function getClassInfo(className) {
                 .addOptions(
                     {
                         label: `Aegis Fighter`,
-                        value: `aegisfighter`
+                        value: `aegisfighter`,
+                        emoji: `<:aegisfighter:862620371710115861>`
                     },
                     {
                         label: `Blast Archer`,
-                        value: `blastarcher`
+                        value: `blastarcher`,
+                        emoji: `<:blastarcher:862620371605782539>`
                     },
                     {
                         label: `Spell Caster`,
-                        value: `spellcaster`
+                        value: `spellcaster`,
+                        emoji: `<:spellcaster:862620371923501086>`
                     },
                     {
                         label: `Twin Striker`,
-                        value: `twinstriker`
+                        value: `twinstriker`,
+                        emoji: `<:twinstriker:862620371927695400>`
                     }
                 )
         )

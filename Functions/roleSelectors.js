@@ -8,14 +8,14 @@ const roles = {
             emoji: `<:aegisfighter:862620371710115861>`
         },
         {
-            label: `Twin Striker`,
-            value: '862620600836161536',
-            emoji: `<:twinstriker:862620371927695400>`
-        },
-        {
             label: `Blast Archer`,
             value: '862620602929381377',
             emoji: `<:blastarcher:862620371605782539>`
+        },
+        {
+            label: `Heavy Smasher`,
+            value: '862620608553287680',
+            emoji: `<:heavysmasher:862620371920224266>`
         },
         {
             label: `Spell Caster`,
@@ -23,9 +23,9 @@ const roles = {
             emoji: `<:spellcaster:862620371923501086>`
         },
         {
-            label: `Heavy Smasher`,
-            value: '862620608553287680',
-            emoji: `<:heavysmasher:862620371920224266>`
+            label: `Twin Striker`,
+            value: '862620600836161536',
+            emoji: `<:twinstriker:862620371927695400>`
         }
     ],
     colors: [
@@ -220,7 +220,7 @@ function updateMemberRoles(interaction) {
         currentRoles.includes(roleId) ? member.roles.remove(roleId) : member.roles.add(roleId)
     })
 
-    return interaction.reply(interaction.reply({ content: 'Your roles have been updated!', ephemeral: true }))
+    return interaction.reply({ content: 'Your roles have been updated!', ephemeral: true })
 }
 
 module.exports = { roles, updateMemberRoles, getRoleSelectors }
