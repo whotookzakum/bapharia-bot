@@ -1,22 +1,24 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { getClassInfo } = require('../../Functions/classInfo');
+const text = require("../../Text/en/classes.json");
+const cmdText = require("../../Text/en/commands.json");
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('class')
-        .setDescription('Information about the available classes.')
+        .setName(cmdText.class.name)
+        .setDescription(cmdText.class.description)
         .addStringOption(option =>
             option
-                .setName('class')
-                .setDescription('Information about a specific class.')
+                .setName(cmdText.class.options[0].name)
+                .setDescription(cmdText.class.options[0].description)
                 .addChoices(
-                    { name: 'Aegis Fighter', value: 'aegis-fighter' },
-                    { name: 'Blast Archer', value: 'blast-archer' },
-                    { name: 'Spell Caster', value: 'spell-caster' },
-                    { name: 'Twin Striker', value: 'twin-striker' },
+                    { name: text.classes["aegis-fighter"].name, value: text.classes["aegis-fighter"].uri },
+                    { name: text.classes["blast-archer"].name, value: text.classes["blast-archer"].uri },
+                    { name: text.classes["spell-caster"].name, value: text.classes["spell-caster"].uri },
+                    { name: text.classes["twin-striker"].name, value: text.classes["twin-striker"].uri }
                 )),
     execute(interaction) {
-        const selection = interaction.options.getString('class')
+        const selection = interaction.options.getString(cmdText.class.options[0].name)
         return interaction.reply(getClassInfo(selection))
     },
 };

@@ -1,5 +1,5 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, SelectMenuBuilder } = require("discord.js");
-const text = require("../Text/en/classes/classes.json");
+const text = require("../Text/en/classes.json");
 
 function getColorFromElement(element) {
     switch (element) {
