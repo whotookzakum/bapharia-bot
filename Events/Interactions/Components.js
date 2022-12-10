@@ -28,6 +28,8 @@ module.exports = {
                 return interaction.reply(getClassInfo())
             else if (id === 'help_button_liquidmemories')
                 return interaction.reply(getLiquidMemoriesInfo())
+            else if (id === 'help_button_imagine')
+                return interaction.reply(getImagineInfo()) 
         }
     }
 }
