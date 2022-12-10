@@ -23,6 +23,17 @@
     "liquidmemories": {
         "name": "liquidmemories",
         "description": "Information about the available Liquid Memories.",
+        "options": [
+            {
+                "name": "color",
+                "description": "Information about a specific liquid memory."
+            }
+        ],
         "buttonText": "Liquid Memories"
+    },
+    "imagine": {
+        "name": "imagine",
+        "description": "Information about all available Imagine.",
+        "buttonText": "Imagine"
     }
 }
