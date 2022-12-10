@@ -46,7 +46,7 @@ function getClassInfo(className) {
         return { embeds: [embed], components: [classSelector], ephemeral: true }
     }
 
-    let selectedClass = classes[className]
+    const selectedClass = classes[className]
     const elementColorIndex = className === "spell-caster" ? 1 : 0
     selectedClass.color = getColorFromElement(classes[className].elements[elementColorIndex])
     
