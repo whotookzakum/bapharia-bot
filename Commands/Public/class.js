@@ -13,10 +13,9 @@ module.exports = {
                 .setName(options[0].name)
                 .setDescription(options[0].description)
                 .addChoices(
-                    ...Object.keys(text.classes).map(choice => ({ 
-                        name: text.classes[choice].name, 
-                        value: text.classes[choice].uri 
-                    }))
+                    ...Object.keys(text.classes).map(choice => (
+                        { name: text.classes[choice].name, value: text.classes[choice].uri }
+                    ))
                 )),
     execute(interaction) {
         const selection = interaction.options.getString(options[0].name)

@@ -24,7 +24,7 @@ module.exports = {
         else if (interaction.isButton()) {
             if (id === 'help_button_roles')
                 return interaction.reply(getRoleSelectors(interaction))
-            else if (id === 'help_button_classes') 
+            else if (id === 'help_button_class') 
                 return interaction.reply(getClassInfo())
             else if (id === 'help_button_liquidmemories')
                 return interaction.reply(getLiquidMemoriesInfo())

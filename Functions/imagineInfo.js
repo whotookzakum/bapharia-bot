@@ -1,4 +1,4 @@
-const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, SelectMenuBuilder } = require("discord.js");
+const { EmbedBuilder, ActionRowBuilder, SelectMenuBuilder } = require("discord.js");
 
 // Returns an ephemeral message with an embed and selectors
 function getImagineInfo(imagineName) {

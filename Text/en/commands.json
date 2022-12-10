@@ -1,4 +1,14 @@
 {
+    "help": {
+        "name": "help",
+        "description": "List of all bot commands!",
+        "buttonText": "Help"
+    },
+    "roles": {
+        "name": "roles",
+        "description": "Choose roles to assign to yourself.",
+        "buttonText": "Roles"
+    },
     "class": {
         "name": "class",
         "description": "Information about the available classes.",
@@ -7,6 +17,12 @@
                 "name": "class",
                 "description": "Information about a specific class."
             }
-        ] 
+        ],
+        "buttonText": "Classes"
+    },
+    "liquidmemories": {
+        "name": "liquidmemories",
+        "description": "Information about the available Liquid Memories.",
+        "buttonText": "Liquid Memories"
     }
 }
