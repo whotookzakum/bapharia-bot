@@ -1,4 +1,5 @@
 const { getClassInfo } = require("../../Functions/classInfo")
+const { getImagineInfo } = require("../../Functions/imagineInfo")
 const { getLiquidMemoriesInfo } = require("../../Functions/liquidMemoriesInfo")
 const { updateMemberRoles, getRoleSelectors } = require("../../Functions/roleSelectors")
 
@@ -17,6 +18,8 @@ module.exports = {
                 return interaction.update(getClassInfo(interaction.values[0]))
             else if (id === 'liquid_memory_selector')
                 return interaction.update(getLiquidMemoriesInfo(interaction.values[0]))
+            else if (id.includes('imagine_selector'))
+                return interaction.update(getImagineInfo(interaction.values[0]))
         }
         else if (interaction.isButton()) {
             if (id === 'help_button_roles')

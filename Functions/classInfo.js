@@ -1,123 +1,66 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, SelectMenuBuilder } = require("discord.js");
+const text = require("../Text/en/classes/classes.json");
+
+function getColorFromElement(element) {
+    switch (element) {
+        case "Light":
+            return 0xe7d86a
+        case "Fire":
+            return 0xd56d2c
+        case "Ice":
+            return 0x5dbceb
+        case "Earth":
+            return 0x3dcdb3
+        default:
+            return 0x446cab
+    }
+}
 
 // Returns an ephemeral message with an embed and buttons
 function getClassInfo(className) {
-    let options
 
-    const selector = new ActionRowBuilder()
+    const classes = text.classes
+
+    const classSelector = new ActionRowBuilder()
         .addComponents(
             new SelectMenuBuilder()
                 .setCustomId(`class_selector`)
                 .setPlaceholder(`Select a class`)
                 .addOptions(
-                    {
-                        label: `Aegis Fighter`,
-                        value: `aegisfighter`,
-                        emoji: `<:aegisfighter:862620371710115861>`
-                    },
-                    {
-                        label: `Blast Archer`,
-                        value: `blastarcher`,
-                        emoji: `<:blastarcher:862620371605782539>`
-                    },
-                    {
-                        label: `Spell Caster`,
-                        value: `spellcaster`,
-                        emoji: `<:spellcaster:862620371923501086>`
-                    },
-                    {
-                        label: `Twin Striker`,
-                        value: `twinstriker`,
-                        emoji: `<:twinstriker:862620371927695400>`
-                    }
+                    Object.keys(classes).map(option => {
+                        return {
+                            label: classes[option].name,
+                            value: classes[option].uri,
+                            emoji: classes[option].emoji
+                        }
+                    })
                 )
         )
 
-    switch (className) {
-        case "aegisfighter":
-            options = {
-                title: `Aegis Fighter`,
-                description: `Aegis Fighters maintain the front line by fighting at close range, alternating between offensive and defensive shield skills to protect themselves and their allies.`,
-                color: 0xe7d86a,
-                uniqueMechanic: {
-                    name: `Shield Gauge`, // Shield Gauge
-                    value: `The shield gauge will be consumed when blocking damage or parrying enemies. When the gauge is depleted, you become guard-broken and cannot use shield-related skills for a period of time.`
-                },
-                elements: `Light`,
-                roles: `Tank, DPS`,
-                imageUrl: `https://i.imgur.com/eTVr1Aw.gif`,
-                thumbnailUrl: `https://i.imgur.com/eWwPC9H.png`,
-                uri: `aegis-fighter`
-            }
-            break;
-        case "blastarcher":
-            options = {
-                title: `Blast Archer`,
-                description: `Blast Archers attack from a range with their bow and are adept at supporting the party. They adapt their fighting style based on the situation through techniques such as weak point targeting and area-of-effect attacks.`,
-                color: 0x3dcdb3,
-                uniqueMechanic: {
-                    name: `Impeccable Aim`, // Weakness Targeting
-                    value: `Take manual aim to locate enemy weak points, which inflict additional damage when hit.`
-                },
-                elements: `Earth`,
-                roles: `Support, DPS`,
-                imageUrl: `https://i.imgur.com/moYPg2B.gif`,
-                thumbnailUrl: `https://i.imgur.com/UW9nAaN.png`,
-                uri: `blast-archer`
-            }
-            break;
-        case "spellcaster":
-            options = {
-                title: `Spell Caster`,
-                description: `Spell Casters can learn elemental attacks that manipulate fire, ice and lightning. Their high damage and elemental effects are even more influential when fighting with a party.`,
-                color: 0x5dbceb,
-                uniqueMechanic: {
-                    name: `Engram's Blessing`, // EP Gauge
-                    value: `Tactical skills have no cooldown but instead consume EP gauge. EP can be charged, but will leave you vulnerable while doing so.`
-                },
-                elements: `Fire, Ice, Lightning`,
-                roles: `DPS`,
-                imageUrl: `https://i.imgur.com/GVQOn55.gif`,
-                thumbnailUrl: `https://i.imgur.com/qygKgNJ.png`,
-                uri: `spell-caster`
-            }
-            break;
-        case "twinstriker":
-            options = {
-                title: `Twin Striker`,
-                description: `Twin Strikers use their dual axes to unleash a flurry of close-range attacks. By repeatedly attacking, their damage increases further beyond its limits.`,
-                color: 0xd56d2c,
-                uniqueMechanic: {
-                    name: `Combo Meter`, // Combo Meter
-                    value: `Damaging enemies increases the combo meter, which multiplies your damage. Getting knocked down will reset the combo meter to 0.`
-                },
-                elements: `Fire`,
-                roles: `DPS`,
-                imageUrl: `https://i.imgur.com/wI0pKr9.gif`,
-                thumbnailUrl: `https://i.imgur.com/xDrRixw.png`,
-                uri: `twin-striker`
-            }
-            break;
-        default:
-            const embed = new EmbedBuilder()
-                .setTitle(`Classes`)
-                .setDescription(`There are currently 5 classes, each with a unique mechanic. Each class must be leveled up separately. You can switch classes at a Class Master NPC.\n\n**Select a class below to learn more**`)
-                .setColor(0x446cab)
+    if (!className) {
+        const embed = new EmbedBuilder()
+            .setTitle(text.index.title)
+            .setDescription(text.index.description)
+            .setColor(0x446cab)
 
-            return { embeds: [embed], components: [selector], ephemeral: true }
+        return { embeds: [embed], components: [classSelector], ephemeral: true }
     }
 
+    let selectedClass = classes[className]
+    const elementColorIndex = className === "spell-caster" ? 1 : 0
+    selectedClass.color = getColorFromElement(classes[className].elements[elementColorIndex])
+    
     const embed = new EmbedBuilder()
-        .setTitle(options.title)
-        .setDescription(options.description)
-        .setColor(options.color)
+        .setTitle(selectedClass.name)
+        .setDescription(selectedClass.description)
+        .setColor(selectedClass.color)
         .addFields(
-            { name: options.uniqueMechanic.name, value: options.uniqueMechanic.value },
-            { name: `Elements`, value: options.elements },
-            { name: `Roles`, value: options.roles }
+            { name: selectedClass.uniqueMechanic.name, value: selectedClass.uniqueMechanic.value },
+            { name: `Elements`, value: `${selectedClass.elements.join(", ")}` },
+            { name: `Roles`, value: selectedClass.roles }
         )
-        .setImage(options.imageUrl)
-        .setThumbnail(options.thumbnailUrl)
+        .setImage(selectedClass.imageUrl)
+        .setThumbnail(selectedClass.thumbnailUrl)
         .setFooter({ text: 'Bapharia.com', iconURL: `https://cdn.discordapp.com/attachments/1039444525841653780/1040992188844220498/3.png` })
 
 
@@ -126,21 +69,21 @@ function getClassInfo(className) {
             new ButtonBuilder()
                 .setLabel(`Class Page`)
                 .setEmoji(`🔰`)
-                .setURL(`https://bapharia.com/classes/${options.uri}`)
+                .setURL(`https://bapharia.com/classes/${selectedClass.uri}`)
                 .setStyle('Link'),
             new ButtonBuilder()
                 .setLabel(`Guides`)
                 .setEmoji(`📖`)
-                .setURL(`https://bapharia.com/guides/${options.uri}`)
+                .setURL(`https://bapharia.com/guides/${selectedClass.uri}`)
                 .setStyle('Link'),
             new ButtonBuilder()
                 .setLabel(`Skill Builder`)
                 .setEmoji(`🧪`)
-                .setURL(`https://bapharia.com/classes/${options.uri}/skills`)
+                .setURL(`https://bapharia.com/classes/${selectedClass.uri}/skills`)
                 .setStyle('Link'),
         )
 
-    return { embeds: [embed], components: [buttons, selector], ephemeral: true }
+    return { embeds: [embed], components: [buttons, classSelector], ephemeral: true }
 }
 
 module.exports = { getClassInfo }
