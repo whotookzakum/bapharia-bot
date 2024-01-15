@@ -20,7 +20,7 @@
         "description": "Link to a guide from the Bapharia website.",
         "options": [
             {
-                "name": "guide",
+                "name": "title",
                 "description": "Title of the guide from Bapharia.com"
             }
         ],

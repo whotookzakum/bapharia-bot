@@ -49,5 +49,56 @@
             "text": "Bapharia.com",
             "icon_url": "https://bapharia.com/images/logo.png"
         }
+    },
+    {
+        "id": 12,
+        "name": "Aegis Fighter",
+        "emoji": "<:aegisfighter:862620371710115861>",
+        "description": "# [Aegis Fighter](https://bapharia.com/classes/12) <:light:1133646465617641482>\n*Wielding a one-handed sword and shield, Aegis Fighters battle on the front line, utilizing both offensive and defensive skills that excel in crowd-control and enemy aggro management.*\n## Shield Gauge\n> Aegis Fighters can hold down the class action button to enter a guard stance. Successful blocks of enemy attacks will consume Shield Gauge. Once the gauge is depleted, shield-related skills will be temporarily unavailable. Press the normal attack button after blocking to perform a powerful counterattack.\n ### Pros\n- High survivability\n- Strong crowd control and support abilities\n- High skill ceiling\n### Cons\n- Low damage output\n- Long cooldowns\n- Short range and slow attack speed",
+        "thumbnail": {
+            "url": "https://bapharia.com/UI/Icon/ClassL/UI_IconClassL_12.png"
+        },
+        "color": 15194218,
+        "image": {
+            "url": "https://bapharia.com/images/banner_aegisfighter.png"
+        },
+        "footer": {
+            "text": "Bapharia.com",
+            "icon_url": "https://bapharia.com/images/logo.png"
+        }
+    },
+    {
+        "id": 19,
+        "name": "Heavy Smasher",
+        "emoji": "<:heavysmasher:862620371920224266>",
+        "description": "# [Heavy Smasher](https://bapharia.com/classes/19) <:earth:1133646462006345798>\n*Carrying a cannon-hammer hybrid weapon, Heavy Smashers perform slow, heavy-hitting attacks that deal significant damage and provide crowd-control.*\n## Cartridge\n> Certain Heavy Smasher skills consume ammunition from the cartridge, with different skills consuming different amounts. If there are remaining rounds in the cartridge, holding the subaction button will reload the cartridge. If the cartridge is completely empty, pressing the subaction button will initiate a Quick Reload, granting 2 extra rounds of ammunition.\n ### Pros\n- Excellent enemy grouping capability\n- High damage output\n- High survivability\n### Cons\n- Slow attacks\n- Reliant on Super Armor\n- Few party buffs/debuffs",
+        "thumbnail": {
+            "url": "https://bapharia.com/UI/Icon/ClassL/UI_IconClassL_19.png"
+        },
+        "color": 10708994,
+        "image": {
+            "url": "https://bapharia.com/images/banner_heavysmasher.png"
+        },
+        "footer": {
+            "text": "Bapharia.com",
+            "icon_url": "https://bapharia.com/images/logo.png"
+        }
+    },
+    {
+        "id": 20,
+        "name": "Blitz Lancer",
+        "emoji": "<:blitzlancer:1126265592677142631>",
+        "description": "# [Blitz Lancer](https://bapharia.com/classes/20) <:thunder:1133646456352415875>\n*Equipped with a spear, Blitz Lancers make use of their dynamic movement in close-combat while utilizing their unique Sigils for various buffs and debuffs.*\n## Sigils\n> Blitz Lancer can apply Sigils on enemies by using various skills or basic attacks. **The sigils don't do anything on their own.** They must be activated by a skill that activates (explodes) them, or by Leap Shot (class action).\n## <:redsigil:1142049206832480266> Burst Sigil (炸)\n> **The skill that activates a red sigil deals increased damage.** Can be applied via various tactical skills, holding basic attack until it's charged enough to do the dash attack, or with a max-height plunge attack.\n## <:bluesigil:1142049208917041162> Void Sigil (虚)\n> **Activating this sigil applies Decreased Attack on the enemy.** Can be applied via various tactical skills, and the forward basic attack.\n## <:greensigil:1142049213191032943> Binding Sigil (絡)\n> **Activating this sigil applies Reduced Movement Speed on the enemy.** Can be applied via various tactical skills, and the backward basic attack.\n## Ultimate Sigil Flowerfall (重刻・散華)\n> In addition to the effects above, **activating all 3 sigils at once will cause a powerful AoE explosion.**\n### Pros\n- High damage output and mobility\n- High mobbing potential\n- High skill ceiling\n### Cons\n- Semi-low survivability\n- Complex skill rotations\n- Few party buffs/debuffs",
+        "thumbnail": {
+            "url": "https://bapharia.com/UI/Icon/ClassL/UI_IconClassL_20.png"
+        },
+        "color": 4050355,
+        "image": {
+            "url": "https://bapharia.com/images/banner_blitzlancer.png"
+        },
+        "footer": {
+            "text": "Bapharia.com",
+            "icon_url": "https://bapharia.com/images/logo.png"
+        }
     }
 ]

@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Abnormal Statuses",
+        "value": "abnormal-statuses"
+    },
+    {
+        "name": "Adventure Boards",
+        "value": "adventure-boards"
+    },
+    {
+        "name": "Combat",
+        "value": "combat"
+    },
+    {
+        "name": "Cosmetics",
+        "value": "cosmetics"
+    },
+    {
+        "name": "Elements",
+        "value": "elements"
+    },
+    {
+        "name": "FAQ",
+        "value": "faq"
+    },
+    {
+        "name": "Imagine",
+        "value": "imagine"
+    },
+    {
+        "name": "Liquid Memories",
+        "value": "liquid-memories"
+    },
+    {
+        "name": "Main Story Quests",
+        "value": "main-story-quests"
+    },
+    {
+        "name": "Microtransactions",
+        "value": "microtransactions"
+    },
+    {
+        "name": "Missions",
+        "value": "missions"
+    },
+    {
+        "name": "Social Features",
+        "value": "social-features"
+    },
+    {
+        "name": "Teams",
+        "value": "teams"
+    },
+    {
+        "name": "Weapons & Plugs",
+        "value": "weapons-and-plugs"
+    }
+]
