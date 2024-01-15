@@ -9,7 +9,7 @@
         "description": "Information about the available classes.",
         "options": [
             {
-                "name": "class",
+                "name": "name",
                 "description": "Information about a specific class."
             }
         ],

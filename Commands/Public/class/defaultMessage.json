@@ -1,0 +1,16 @@
+{
+    "title": "Classes",
+    "url": "https://bapharia.com/classes",
+    "description": "There are currently 6 classes, each with a unique mechanic. Each class must be leveled up separately. You can switch classes by switching weapons (after completing the Class Master's quests).\n\n**Select a class below to learn more**",
+    "color": 4484267,
+    "thumbnail": {
+        "url": "https://bapharia.com/UI/Adventurer/UI_AdventurerRank_Mark02.png"
+    },
+    "image": {
+        "url": "https://bapharia.com/images/banner_classes.png"
+    },
+    "footer": {
+        "text": "Bapharia.com",
+        "icon_url": "https://bapharia.com/images/logo.png"
+    }
+}

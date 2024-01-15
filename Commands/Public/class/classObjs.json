@@ -1,0 +1,53 @@
+[
+    {
+        "id": 6,
+        "name": "Blast Archer",
+        "emoji": "<:blastarcher:862620371605782539>",
+        "description": "# [Blast Archer](https://bapharia.com/classes/6) <:earth:1133646462006345798>\n*Utilizing a bow to strike down foes from a safe distance, Blast Archers also provide heals and buffs for allies and debuffs to enemies.*\n### Buff Charge Gauge\n> By dealing damage, Blast Archers can charge the Buff Charge Gauge up to level 3. Using the subaction, Cure Arrow, will consume the gauge and place a healing field at the selected location. The heal amount will differ based on the gauge level. The gauge will charge more when dealing critical hits and hitting enemy weak points.\n### Weak-point Targeting\n> Blast Archers deal increased damage when hitting an enemy’s weak point. These points vary between enemies, such as the head or back. You may be able to hit weak spots with auto aim on some enemies, but this is unlikely to be the case for most enemies so players will have to switch between auto and manual aim for maximum efficiency.\n ### Pros\n- Powerful buffs and debuffs with high uptime\n- Most consistent healing output\n- Ranged—great for farming enemies\n### Cons\n- Low damage output\n- Medium survivability\n- Difficult animation cancels",
+        "thumbnail": {
+            "url": "https://bapharia.com/UI/Icon/ClassL/UI_IconClassL_06.png"
+        },
+        "color": 10708994,
+        "image": {
+            "url": "https://bapharia.com/images/banner_blastarcher.png"
+        },
+        "footer": {
+            "text": "Bapharia.com",
+            "icon_url": "https://bapharia.com/images/logo.png"
+        }
+    },
+    {
+        "id": 7,
+        "name": "Twin Striker",
+        "emoji": "<:twinstriker:862620371927695400>",
+        "description": "# [Twin Striker](https://bapharia.com/classes/7) <:fire:1133646452548173907>\n*With axes in each hand, Twin Strikers unleash fast combo attacks to continuously deal damage, stack buffs, and contribute many hits to the Party Chain.*\n## Combo Gauge\n> Twin Strikers build Combo Gauge with each successful hit. The Combo Gauge is a damage multiplier that increases the power of all their attacks. If their HP drops below a certain amount, the gauge will be reset back to 0.\n ### Pros\n- Very high damage output\n- Abundant self-heal and damage reduction\n- High hit count for party chain\n### Cons\n- Low mobility\n- Close range\n- Few party support options",
+        "thumbnail": {
+            "url": "https://bapharia.com/UI/Icon/ClassL/UI_IconClassL_07.png"
+        },
+        "color": 14358795,
+        "image": {
+            "url": "https://bapharia.com/images/banner_twinstriker.png"
+        },
+        "footer": {
+            "text": "Bapharia.com",
+            "icon_url": "https://bapharia.com/images/logo.png"
+        }
+    },
+    {
+        "id": 11,
+        "name": "Spell Caster",
+        "emoji": "<:spellcaster:862620371923501086>",
+        "description": "# [Spell Caster](https://bapharia.com/classes/11) <:fire:1133646452548173907><:ice:1133646458256625674><:thunder:1133646456352415875>\n*With mastery over the elements, Spell Casters use a staff to decimate their enemies from afar, dealing massive burst damage and accumulating Elemental Charge.*\n## EP Gauge\n> Most Spell Caster skills do not have cooldowns, and instead consume EP from the EP Gauge. Different skills require different amounts of EP. EP will slowly recover over time, and can be quickly recharged by holding the subaction button.\n ### Pros\n- High damage output\n- High elemental charge accumulation\n- Ranged—good for farming enemies\n### Cons\n- Very low mobility\n- Low survivability\n- Few non-elemental skills",
+        "thumbnail": {
+            "url": "https://bapharia.com/UI/Icon/ClassL/UI_IconClassL_11.png"
+        },
+        "color": 16711849,
+        "image": {
+            "url": "https://bapharia.com/images/banner_spellcaster.png"
+        },
+        "footer": {
+            "text": "Bapharia.com",
+            "icon_url": "https://bapharia.com/images/logo.png"
+        }
+    }
+]
