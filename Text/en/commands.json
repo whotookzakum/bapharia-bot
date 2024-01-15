@@ -4,11 +4,6 @@
         "description": "List of all bot commands!",
         "buttonText": "Help"
     },
-    "roles": {
-        "name": "roles",
-        "description": "Choose roles to assign to yourself.",
-        "buttonText": "Roles"
-    },
     "class": {
         "name": "class",
         "description": "Information about the available classes.",

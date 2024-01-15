@@ -9,7 +9,7 @@ module.exports = {
         const welcome = new EmbedBuilder()
             .setTitle(`🎉 Welcome to Bapharia's Guidance!`)
             .setDescription(
-                `We are the premier information hub for BLUE PROTOCOL.\nTheorycrafting, guides, and leaks—all in one place!`
+                `We are the premier information hub for BLUE PROTOCOL.\nVisit [bapharia.com](https://bapharia.com) to learn more about the game!`
             )
             .setColor(0x0099ff)
 
@@ -23,7 +23,7 @@ module.exports = {
         const commands = new EmbedBuilder()
             .setTitle(`🏅 Roles & Commands`)
             .setDescription(
-                `Use **/roles** to assign yourself roles, or **/help** to view commands.`
+                `Roles can be assigned in <id:customize>. Use **/help** to view commands.` // <id:guide> for server guide
             )
             .setColor(0x53d35e)
 
