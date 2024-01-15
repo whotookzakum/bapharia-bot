@@ -17,7 +17,7 @@ function getColorFromElement(element) {
 }
 
 // Returns an ephemeral message with an embed and buttons
-function getClassInfo(className) {
+function getClassInfo(classId) {
 
     const classes = text.classes
 
@@ -37,7 +37,7 @@ function getClassInfo(className) {
                 )
         )
 
-    if (!className) {
+    if (!classId) {
         const embed = new EmbedBuilder()
             .setTitle(text.index.title)
             .setDescription(text.index.description)
@@ -46,9 +46,9 @@ function getClassInfo(className) {
         return { embeds: [embed], components: [classSelector], ephemeral: true }
     }
 
-    const selectedClass = classes[className]
-    const elementColorIndex = className === "spell-caster" ? 1 : 0
-    selectedClass.color = getColorFromElement(classes[className].elements[elementColorIndex])
+    const selectedClass = classes[classId]
+    const elementColorIndex = classId === "11" ? 1 : 0
+    selectedClass.color = getColorFromElement(classes[classId].elements[elementColorIndex])
     
     const embed = new EmbedBuilder()
         .setTitle(selectedClass.name)
@@ -67,19 +67,19 @@ function getClassInfo(className) {
     const buttons = new ActionRowBuilder()
         .addComponents(
             new ButtonBuilder()
-                .setLabel(`Class Page`)
+                .setLabel(`Overview`)
                 .setEmoji(`🔰`)
                 .setURL(`https://bapharia.com/classes/${selectedClass.uri}`)
                 .setStyle('Link'),
             new ButtonBuilder()
-                .setLabel(`Guides`)
+                .setLabel(`Skills`)
                 .setEmoji(`📖`)
-                .setURL(`https://bapharia.com/guides/${selectedClass.uri}`)
+                .setURL(`https://bapharia.com/classes/${selectedClass.uri}/skills`)
                 .setStyle('Link'),
             new ButtonBuilder()
-                .setLabel(`Skill Builder`)
+                .setLabel(`Meta`)
                 .setEmoji(`🧪`)
-                .setURL(`https://bapharia.com/classes/${selectedClass.uri}/skills`)
+                .setURL(`https://bapharia.com/classes/${selectedClass.uri}/meta`)
                 .setStyle('Link'),
         )
 

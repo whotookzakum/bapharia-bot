@@ -15,6 +15,17 @@
         ],
         "buttonText": "Classes"
     },
+    "guide": {
+        "name": "guide",
+        "description": "Link to a guide from the Bapharia website.",
+        "options": [
+            {
+                "name": "guide",
+                "description": "Title of the guide from Bapharia.com"
+            }
+        ],
+        "buttonText": "Guides"
+    },
     "liquidmemories": {
         "name": "liquidmemories",
         "description": "Information about the available Liquid Memories.",

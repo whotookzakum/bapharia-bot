@@ -1,8 +1,8 @@
 {
     "classes": {
-        "aegis-fighter": {
+        "12": {
             "name": "Aegis Fighter",
-            "uri": "aegis-fighter",
+            "uri": "12",
             "emoji": "<:aegisfighter:862620371710115861>",
             "description": "Aegis Fighters maintain the front line by fighting at close range, alternating between offensive and defensive shield skills to protect themselves and their allies.",
             "uniqueMechanic": {
@@ -16,9 +16,9 @@
             "imageUrl": "https://i.imgur.com/eTVr1Aw.gif",
             "thumbnailUrl": "https://i.imgur.com/eWwPC9H.png"
         },
-        "blast-archer": {
+        "6": {
             "name": "Blast Archer",
-            "uri": "blast-archer",
+            "uri": "6",
             "emoji": "<:blastarcher:862620371605782539>",
             "description": "Blast Archers attack from a range with their bow and are adept at supporting the party. They adapt their fighting style based on the situation through techniques such as weak point targeting and area-of-effect attacks.",
             "uniqueMechanic": {
@@ -32,9 +32,9 @@
             "imageUrl": "https://i.imgur.com/moYPg2B.gif",
             "thumbnailUrl": "https://i.imgur.com/UW9nAaN.png"
         },
-        "spell-caster": {
+        "11": {
             "name": "Spell Caster",
-            "uri": "spell-caster",
+            "uri": "11",
             "emoji": "<:spellcaster:862620371923501086>",
             "description": "Spell Casters can learn elemental attacks that manipulate fire, ice and lightning. Their high damage and elemental effects are even more influential when fighting with a party.",
             "uniqueMechanic": {
@@ -50,9 +50,9 @@
             "imageUrl": "https://i.imgur.com/GVQOn55.gif",
             "thumbnailUrl": "https://i.imgur.com/qygKgNJ.png"
         },
-        "twin-striker": {
+        "7": {
             "name": "Twin Striker",
-            "uri": "twin-striker",
+            "uri": "7",
             "emoji": "<:twinstriker:862620371927695400>",
             "description": "Twin Strikers use their dual axes to unleash a flurry of close-range attacks. By repeatedly attacking, their damage increases further beyond its limits.",
             "uniqueMechanic": {
