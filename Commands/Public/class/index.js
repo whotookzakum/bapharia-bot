@@ -4,7 +4,13 @@ const classObjs = require("./classObjs.json");
 const defaultMessage = require("./defaultMessage.json");
 
 // TODO: Fetch classObjs from website or github
-// TODO: sort classes alphabetically
+
+classObjs.sort((a, b) => {
+    if (a.name < b.name) return -1
+    if (a.name > b.name) return 1
+    return 0
+})
+console.log(classObjs.map(o => o.name))
 
 const { name, description, options } = commandTexts.class
 

@@ -3,7 +3,12 @@ const commandTexts = require("../../../Text/en/commands.json");
 const guides = require("./guides.json");
 
 // TODO: Fetch guides from website or github
-// TODO: sort guides alphabetically
+
+guides.sort((a, b) => {
+    if (a.name < b.name) return -1
+    if (a.name > b.name) return 1
+    return 0
+})
 
 const { name, description, options } = commandTexts.guide
 
