@@ -26,6 +26,11 @@
         ],
         "buttonText": "Guides"
     },
+    "raids": {
+        "name": "raids",
+        "description": "Displays the Raid & Defensive Battle schedule, adjusted for your local time zone.",
+        "buttonText": "Raids"
+    },
     "liquidmemories": {
         "name": "liquidmemories",
         "description": "Information about the available Liquid Memories.",
