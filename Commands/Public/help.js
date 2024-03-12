@@ -30,6 +30,10 @@ module.exports = {
                 )
             )
 
-        return interaction.reply({ embeds: [embed], components: [buttons], ephemeral: true })
+        return interaction.reply({ 
+            embeds: [embed], 
+            // components: [buttons], // only 5 buttons max
+            ephemeral: true 
+        })
     },
 };

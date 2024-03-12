@@ -26,6 +26,21 @@
         ],
         "buttonText": "Guides"
     },
+    "time": {
+        "name": "time",
+        "description": "Get current time, or convert a JST time to your local time zone.",
+        "options": [
+            {
+                "name": "time",
+                "description": "The JST time to convert to local time, in HH:mm format. Defaults to start of the day in Japan."
+            },
+            {
+                "name": "date",
+                "description": "The date to add into the conversion, in yyyy-MM-dd format. Defaults to the current date in Japan."
+            }
+        ],
+        "buttonText": "time"
+    },
     "raids": {
         "name": "raids",
         "description": "Displays the Raid & Defensive Battle schedule, adjusted for your local time zone.",
