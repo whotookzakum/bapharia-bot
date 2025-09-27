@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
-const commandTexts = require("../../../Text/en/commands.json");
+const commandTexts = require("../Text/en/commands.json");
 const { DateTime } = require("luxon");
-const raidTimes = require("./raidTimes.json")
+const raidTimes = require("../Commands/Public/raids/raidTimes.json")
 
 // TODO: Get raid times and active raids from bapharia (a static API would work) for consistency across the webhooks.
 
@@ -12,7 +12,7 @@ const command = new SlashCommandBuilder()
     .setDescription(description)
 
 function getRaidsCommandResponse() {
-    const activeRaids = ["rai001"]
+    const activeRaids = ["rai001", "rai007_Hard"]
     const activeDefenseBattles = []
 
     const now = DateTime.now().setZone("Asia/Tokyo")
@@ -47,6 +47,15 @@ function getRaidsCommandResponse() {
 
         let outputString = `<t:${unixTimestamp}:F>\n`
 
+        if (isCurrentlyActiveRaid && !activeTimeSlot) {
+            outputString = `**__:arrow_right:<t:${unixTimestamp}:F>__**\n`
+            activeTimeSlot = unixTimestamp
+        }
+        else if (isUpcomingRaid && !upcomingTimeSlot && !activeTimeSlot) {
+            outputString = `**__:arrow_right:<t:${unixTimestamp}:F>__**\n`
+            upcomingTimeSlot = unixTimestamp
+        }
+
         return outputString
     })
         .join("")
@@ -60,19 +69,19 @@ function getRaidsCommandResponse() {
     const embeds = [...activeRaids, ...activeDefenseBattles].map(contentId => {
         return {
             title: "Raid & Defense Battle Schedule",
-            // url: "https://bapharia.com/guides/missions",
-            description: `Here's the schedule for this week. Note that this does not take into account game downtime, or updates that may change the active Raid(s) or Defense Battle(s). Timestamps are converted to your local time.\n\n${message}`,
-            color: 16711849,
-            // image: { url: `https://bapharia.com/guides/missions/${contentId}_entry.png` },
-            // footer: {
-            //     text: "Bapharia.com",
-            //     icon_url: "https://bapharia.com/images/logo.png"
-            // }
+            url: "https://bapharia.com/guides/missions",
+            description: `Here's the schedule for this week. Note that this does not take into account game downtime, or updates that may change the active Raid(s) or Defense Battle(s). Timestamps are converted to your local time.\n\n${message}${nextRaidMessage}`,
+            color: activeTimeSlot ? 0x0fe00b : 0xff0000,
+            image: { url: `https://bapharia.com/guides/missions/${contentId}_entry.png` },
+            footer: {
+                text: "Bapharia.com",
+                icon_url: "https://bapharia.com/images/logo.png"
+            }
         }
     })
 
 
-    return { embeds }
+    return { embeds, ephemeral: true }
 }
 
 

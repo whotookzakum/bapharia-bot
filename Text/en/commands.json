@@ -37,14 +37,23 @@
             {
                 "name": "date",
                 "description": "The date to add into the conversion, in yyyy-MM-dd format. Defaults to the current date in Japan."
+            },
+            {
+                "name": "title",
+                "description": "A custom title for the response message (only shows if a time or date are provided)."
             }
         ],
         "buttonText": "time"
     },
     "raids": {
         "name": "raids",
-        "description": "Displays the Raid & Defensive Battle schedule, adjusted for your local time zone.",
+        "description": "Displays the Raid & Defense Battle schedule, adjusted for your local time zone.",
         "buttonText": "Raids"
+    },
+    "sd": {
+        "name": "sd",
+        "description": "Displays the Sudden Death Battle schedule, adjusted for your local time zone.",
+        "buttonText": "Sudden Death"
     },
     "liquidmemories": {
         "name": "liquidmemories",

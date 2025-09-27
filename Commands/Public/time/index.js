@@ -2,6 +2,8 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const commandTexts = require("../../../Text/en/commands.json");
 const { DateTime } = require("luxon");
 
+// TODO: Add support for setting a timer for "X minutes from now" (years, months, weeks, days, hours, etc.)
+
 // Can't get users' time zones (they would have to manually provide it), so can't make a reverse converter (local time to JST)
 // time defaults to start of the current day in japan
 // date defaults to the current date in japan
@@ -21,8 +23,13 @@ const command = new SlashCommandBuilder()
             .setName(options[1].name)
             .setDescription(options[1].description)
     )
+    .addStringOption(option =>
+        option
+            .setName(options[2].name)
+            .setDescription(options[2].description)
+    )
 
-function getLocalTimeCommandResponse(time, date) {
+function getLocalTimeCommandResponse(time, date, title) {
     const fullDateFormat = { year: "numeric", month: "long", day: "numeric", weekday: "long", hour: "numeric", minute: "numeric" }
 
     // Neither time nor date provided
@@ -56,7 +63,7 @@ function getLocalTimeCommandResponse(time, date) {
 
         return {
             embeds: [{
-                title: "Converting JST to Local Time",
+                title: title ?? "Converting JST to Local Time",
                 fields: [
                     {
                         name: `JST`,
@@ -84,7 +91,7 @@ function getLocalTimeCommandResponse(time, date) {
 
     return {
         embeds: [{
-            title: "Converting JST to Local Time",
+            title: title ?? "Converting JST to Local Time",
             fields: [
                 {
                     name: `JST`,
@@ -109,6 +116,7 @@ module.exports = {
     execute(interaction) {
         const time = interaction.options.getString(options[0].name)
         const date = interaction.options.getString(options[1].name)
-        return interaction.reply(getLocalTimeCommandResponse(time, date))
+        const title = interaction.options.getString(options[2].name)
+        return interaction.reply(getLocalTimeCommandResponse(time, date, title))
     },
 };
